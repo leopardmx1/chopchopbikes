@@ -23,9 +23,9 @@ class MercadoLibre(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         #company = request.registry.get('res.company').browse(cr,uid,1)
         company = request.env.user.company_id
-        REDIRECT_URI = 'https://chopchopbikes.odoo.com/meli_login'
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        REDIRECT_URI = company.mercadolibre_redirect_uri
+        CLIENT_ID = company.mercadolibre_client_id
+        CLIENT_SECRET = company.mercadolibre_secret_key
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -34,7 +34,7 @@ class MercadoLibre(http.Controller):
             return "<a href='"+meli.auth_url(redirect_URI=REDIRECT_URI)+"'>Login</a>"
 
         meli = Meli(client_id=CLIENT_ID,client_secret=CLIENT_SECRET, access_token=ACCESS_TOKEN, refresh_token=REFRESH_TOKEN)
-        response = meli.get("/items/MLM771818807")
+        response = meli.get("/items/MLA533830652")
 
         return "MercadoLibre for Odoo 8/9/10/11 - Moldeo Interactive: %s " % response.content
 
@@ -51,9 +51,9 @@ class MercadoLibreLogin(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         #company = request.registry.get('res.company').browse(cr,uid,1)
         company = request.env.user.company_id
-        REDIRECT_URI = 'https://chopchopbikes.odoo.com/meli_login'
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        REDIRECT_URI = company.mercadolibre_redirect_uri
+        CLIENT_ID = company.mercadolibre_client_id
+        CLIENT_SECRET = company.mercadolibre_secret_key
 
         meli = Meli(client_id=CLIENT_ID,client_secret=CLIENT_SECRET)
 
