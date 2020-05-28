@@ -23,7 +23,7 @@ class MercadoLibre(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         #company = request.registry.get('res.company').browse(cr,uid,1)
         company = request.env.user.company_id
-        REDIRECT_URI = company.mercadolibre_redirect_uri
+        REDIRECT_URI = 'https://chochopbikes.odoo.com/meli_login'
         CLIENT_ID = '7864574757110521'
         CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = company.mercadolibre_access_token
@@ -51,7 +51,7 @@ class MercadoLibreLogin(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         #company = request.registry.get('res.company').browse(cr,uid,1)
         company = request.env.user.company_id
-        REDIRECT_URI = company.mercadolibre_redirect_uri
+        REDIRECT_URI = 'https://chochopbikes.odoo.com/meli_login'
         CLIENT_ID = '7864574757110521'
         CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
 
