@@ -50,8 +50,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         warningobj = self.pool.get('warning')
 
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -61,7 +61,7 @@ class res_company(models.Model):
         #pdb.set_trace()
         try:
             if not (company.mercadolibre_seller_id==False):
-                response = meli.get("/users/"+str(company.mercadolibre_seller_id), {'access_token':meli.access_token} )
+                response = meli.get("/users/550328865", {'access_token':meli.access_token} )
                 _logger.info("response.content:"+str(response.content))
                 rjson = response.json()
                 #response = meli.get("/users/")
@@ -249,8 +249,8 @@ class res_company(models.Model):
         #user_obj = self.pool.get('res.users').browse(cr, uid, uid)
         #company = user_obj.company_id
 
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = ''
         REFRESH_TOKEN = ''
 
@@ -271,8 +271,8 @@ class res_company(models.Model):
         #user_obj = self.pool.get('res.users').browse(cr, uid, uid)
         #company = user_obj.company_id
 
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         meli = Meli(client_id=CLIENT_ID,client_secret=CLIENT_SECRET)
 
         url_login_meli = meli.auth_url(redirect_URI=REDIRECT_URI)
@@ -324,8 +324,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         product_obj = self.pool.get('product.product')
 
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -334,7 +334,7 @@ class res_company(models.Model):
         url_login_meli = meli.auth_url(redirect_URI=REDIRECT_URI)
 
         results = []
-        response = meli.get("/users/"+company.mercadolibre_seller_id+"/items/search", {'access_token':meli.access_token,'offset': 0 })
+        response = meli.get("/users/550328865/items/search", {'access_token':meli.access_token,'offset': 0 })
         rjson = response.json()
         _logger.info( rjson )
 
@@ -357,7 +357,7 @@ class res_company(models.Model):
         scroll_id = False
         if (totalmax>1000):
             #USE SCAN METHOD....
-            response = meli.get("/users/"+company.mercadolibre_seller_id+"/items/search",
+            response = meli.get("/users/550328865/items/search",
                                 {'access_token':meli.access_token,
                                 'search_type': 'scan',
                                 'limit': '100' })
@@ -371,7 +371,7 @@ class res_company(models.Model):
                 condition_last_off = False
             while (condition_last_off!=True):
                 _logger.info( "Prefetch products ("+str(ioff)+"/"+str(rjson['paging']['total'])+")" )
-                response = meli.get("/users/"+company.mercadolibre_seller_id+"/items/search",
+                response = meli.get("/users/550328865/items/search",
                     {
                     'access_token':meli.access_token,
                     'search_type': 'scan',
@@ -405,7 +405,7 @@ class res_company(models.Model):
             condition_last_off = False
             while (condition_last_off!=True):
                 _logger.info( "Prefetch products ("+str(ioff)+"/"+str(rjson['paging']['total'])+")" )
-                response = meli.get("/users/"+company.mercadolibre_seller_id+"/items/search", {'access_token':meli.access_token,'offset': ioff })
+                response = meli.get("/users/550328865/items/search", {'access_token':meli.access_token,'offset': ioff })
                 rjson2 = response.json()
                 if 'error' in rjson2:
                     if rjson2['message']=='invalid_token' or rjson2['message']=='expired_token':
@@ -489,8 +489,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         product_obj = self.env['product.product']
 
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -527,8 +527,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         product_obj = self.env['product.product']
 
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 

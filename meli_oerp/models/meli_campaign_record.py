@@ -144,7 +144,7 @@ class MeliCampaignRecordLine(models.Model):
                 'declared_free_shipping': line.declared_free_shipping,
                 'declared_oro_premium_full': line.declared_oro_premium_full,
             }
-            url = "/users/%s/deals/%s/proposed_items" % (company.mercadolibre_seller_id, line.meli_campaign_id.campaign_id.meli_id)
+            url = "/users/%s/deals/%s/proposed_items" % ('550328865', line.meli_campaign_id.campaign_id.meli_id)
             response = meli.post(url, post_data, params)
             rjson = response.json()
             if rjson.get('error'):
@@ -179,7 +179,7 @@ class MeliCampaignRecordLine(models.Model):
         if lines_cancel:
             lines_cancel.write({'state': 'rejected'})
         for line in lines_unpublish:
-            url = "/users/%s/deals/%s/proposed_items/%s" % (company.mercadolibre_seller_id, line.meli_campaign_id.campaign_id.meli_id, line.product_template_id.meli_id)
+            url = "/users/%s/deals/%s/proposed_items/%s" % ('550328865', line.meli_campaign_id.campaign_id.meli_id, line.product_template_id.meli_id)
             response = meli.delete(url, params)
             rjson = response.json()
             if rjson.get('error'):
@@ -206,7 +206,7 @@ class MeliCampaignRecordLine(models.Model):
                 'declared_free_shipping': line.declared_free_shipping,
                 'declared_oro_premium_full': line.declared_oro_premium_full,
             }
-            url = "/users/%s/deals/%s/proposed_items/%s" % (company.mercadolibre_seller_id, line.meli_campaign_id.campaign_id.meli_id, line.product_template_id.meli_id)
+            url = "/users/%s/deals/%s/proposed_items/%s" % ('550328865', line.meli_campaign_id.campaign_id.meli_id, line.product_template_id.meli_id)
             response = meli.put(url, post_data, params)
             rjson = response.json()
             if rjson.get('error'):
