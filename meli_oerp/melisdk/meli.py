@@ -35,7 +35,7 @@ class Meli(object):
 
     #AUTH METHODS
     def auth_url(self,redirect_URI):
-        params = {'client_id':self.client_id,'response_type':'code','redirect_uri':redirect_URI}
+        params = {'response_type':'code','client_id':self.client_id,'redirect_uri':redirect_URI}
         url = self.AUTH_URL  + '?' + urlencode(params)
         return url
 
