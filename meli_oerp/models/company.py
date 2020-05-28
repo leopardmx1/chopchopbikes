@@ -61,7 +61,7 @@ class res_company(models.Model):
         #pdb.set_trace()
         try:
             if not (company.mercadolibre_seller_id==False):
-                response = meli.get("/users/550328865", {'access_token':meli.access_token} )
+                response = meli.get("/users/375328189", {'access_token':meli.access_token} )
                 _logger.info("response.content:"+str(response.content))
                 rjson = response.json()
                 #response = meli.get("/users/")
@@ -334,7 +334,7 @@ class res_company(models.Model):
         url_login_meli = meli.auth_url(redirect_URI=REDIRECT_URI)
 
         results = []
-        response = meli.get("/users/550328865/items/search", {'access_token':meli.access_token,'offset': 0 })
+        response = meli.get("/users/375328189/items/search", {'access_token':meli.access_token,'offset': 0 })
         rjson = response.json()
         _logger.info( rjson )
 
@@ -357,7 +357,7 @@ class res_company(models.Model):
         scroll_id = False
         if (totalmax>1000):
             #USE SCAN METHOD....
-            response = meli.get("/users/550328865/items/search",
+            response = meli.get("/users/375328189/items/search",
                                 {'access_token':meli.access_token,
                                 'search_type': 'scan',
                                 'limit': '100' })
@@ -371,7 +371,7 @@ class res_company(models.Model):
                 condition_last_off = False
             while (condition_last_off!=True):
                 _logger.info( "Prefetch products ("+str(ioff)+"/"+str(rjson['paging']['total'])+")" )
-                response = meli.get("/users/550328865/items/search",
+                response = meli.get("/users/375328189/items/search",
                     {
                     'access_token':meli.access_token,
                     'search_type': 'scan',
@@ -405,7 +405,7 @@ class res_company(models.Model):
             condition_last_off = False
             while (condition_last_off!=True):
                 _logger.info( "Prefetch products ("+str(ioff)+"/"+str(rjson['paging']['total'])+")" )
-                response = meli.get("/users/550328865/items/search", {'access_token':meli.access_token,'offset': ioff })
+                response = meli.get("/users/375328189/items/search", {'access_token':meli.access_token,'offset': ioff })
                 rjson2 = response.json()
                 if 'error' in rjson2:
                     if rjson2['message']=='invalid_token' or rjson2['message']=='expired_token':
