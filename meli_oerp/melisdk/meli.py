@@ -135,12 +135,13 @@ class Meli(object):
         response = requests.options(uri, params=urlencode(params), headers=headers)
         return response
 
-    def make_path(self, path, params={}):
+    def make_path(self, path, params=None):
+        params = params or {}
         # Making Path and add a leading / if not exist
-        if not (re.search("^https", path)):
-            if not (re.search("^\/", path)):
-                path = "/" + path
-            path = self.API_ROOT_URL + path
+        if not (re.search("^\/", path)):
+            path = "/" + path
+        path = self.API_ROOT_URL + path
         if params:
             path = path + "?" + urlencode(params)
+
         return path
