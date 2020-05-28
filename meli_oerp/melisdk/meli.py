@@ -13,7 +13,6 @@ try:
 except ImportError:
     import configparser
     from configparser import SafeConfigParser
-from ssl_helper import SSLAdapter
 import json
 
 class Meli(object):
