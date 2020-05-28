@@ -13,6 +13,7 @@ try:
 except ImportError:
     import configparser
     from configparser import SafeConfigParser
+from ssl_helper import SSLAdapter
 import json
 
 class Meli(object):
@@ -26,6 +27,12 @@ class Meli(object):
         parser.read(os.path.dirname(os.path.abspath(__file__))+'/config.ini')
 
         #s.mount('https://api.mercadolibre.com/', Ssl1HttpAdapter())
+        self._requests = requests.Session()
+        try:
+            self.SSL_VERSION = parser.get('config', 'ssl_version')
+            self._requests.mount('https://', SSLAdapter(ssl_version=getattr(ssl, self.SSL_VERSION)))
+        except:
+            self._requests = requests
 
         self.API_ROOT_URL = parser.get('config', 'api_root_url')
         self.SDK_VERSION = parser.get('config', 'sdk_version')
