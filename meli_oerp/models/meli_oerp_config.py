@@ -1,6 +1,6 @@
 #meli_oerp_config
 
-REDIRECT_URI = 'https://chochopbikes.odoo.com/meli_login'
+REDIRECT_URI = ''
 ACCESS_TOKEN = ''
 REFRESH_TOKEN = ''
 CLIENT_ID = '7864574757110521'

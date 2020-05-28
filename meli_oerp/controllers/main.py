@@ -24,8 +24,8 @@ class MercadoLibre(http.Controller):
         #company = request.registry.get('res.company').browse(cr,uid,1)
         company = request.env.user.company_id
         REDIRECT_URI = company.mercadolibre_redirect_uri
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -52,8 +52,8 @@ class MercadoLibreLogin(http.Controller):
         #company = request.registry.get('res.company').browse(cr,uid,1)
         company = request.env.user.company_id
         REDIRECT_URI = company.mercadolibre_redirect_uri
-        CLIENT_ID = company.mercadolibre_client_id
-        CLIENT_SECRET = company.mercadolibre_secret_key
+        CLIENT_ID = '7864574757110521'
+        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
 
         meli = Meli(client_id=CLIENT_ID,client_secret=CLIENT_SECRET)
 
