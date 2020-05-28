@@ -50,8 +50,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         warningobj = self.pool.get('warning')
 
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        CLIENT_ID = '847606641808518'
+        CLIENT_SECRET = 'kKBMQmI3I9lXhyTvngT0ULIJH3dXioD1'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -249,8 +249,8 @@ class res_company(models.Model):
         #user_obj = self.pool.get('res.users').browse(cr, uid, uid)
         #company = user_obj.company_id
 
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        CLIENT_ID = '847606641808518'
+        CLIENT_SECRET = 'kKBMQmI3I9lXhyTvngT0ULIJH3dXioD1'
         ACCESS_TOKEN = ''
         REFRESH_TOKEN = ''
 
@@ -271,8 +271,8 @@ class res_company(models.Model):
         #user_obj = self.pool.get('res.users').browse(cr, uid, uid)
         #company = user_obj.company_id
 
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        CLIENT_ID = '847606641808518'
+        CLIENT_SECRET = 'kKBMQmI3I9lXhyTvngT0ULIJH3dXioD1'
         meli = Meli(client_id=CLIENT_ID,client_secret=CLIENT_SECRET)
 
         url_login_meli = meli.auth_url(redirect_URI=REDIRECT_URI)
@@ -324,8 +324,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         product_obj = self.pool.get('product.product')
 
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        CLIENT_ID = '847606641808518'
+        CLIENT_SECRET = 'kKBMQmI3I9lXhyTvngT0ULIJH3dXioD1'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -489,8 +489,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         product_obj = self.env['product.product']
 
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        CLIENT_ID = '847606641808518'
+        CLIENT_SECRET = 'kKBMQmI3I9lXhyTvngT0ULIJH3dXioD1'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
@@ -527,8 +527,8 @@ class res_company(models.Model):
         company = self.env.user.company_id
         product_obj = self.env['product.product']
 
-        CLIENT_ID = '7864574757110521'
-        CLIENT_SECRET = 'rdzhEWXCXgwWyrZxUOlLLo4iDqPgQPA4'
+        CLIENT_ID = '847606641808518'
+        CLIENT_SECRET = 'kKBMQmI3I9lXhyTvngT0ULIJH3dXioD1'
         ACCESS_TOKEN = company.mercadolibre_access_token
         REFRESH_TOKEN = company.mercadolibre_refresh_token
 
